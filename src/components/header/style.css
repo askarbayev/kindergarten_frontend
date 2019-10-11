@@ -1,0 +1,50 @@
+.header{
+    font-family: sans-serif;
+    height: 40px;
+    background: #050505;
+    color: aliceblue;
+    padding-left: 15px
+}
+
+.header-item{
+    position: absolute;
+    padding: 5px;
+    text-align: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.header-item:active{
+    position: absolute;
+    padding: 5px;
+    text-align: center;
+    justify-content: center;
+    vertical-align: middle;
+    transform: rotate(-180deg) scale(0.5);
+}
+
+.header-icon-item{
+    font-size: 25px;
+    transition: 0.3s;
+    opacity: 0.6;
+    transform: rotate(20deg);
+}
+
+.header-icon-item:hover {
+    font-size: 30px;
+    opacity: 2;
+    transform: rotate(0deg) scale(1);
+    transform: rotate(-180deg) scale(1);
+    -ms-transform: rotate(20deg); /* IE 9 */
+    -webkit-transform: rotate(20deg); /* Safari 3-8 */
+    transform: rotate(20deg)!important;
+}
+.header-icon-item:active {
+    opacity: 2;
+    transform: rotate(-180deg) scale(1); 
+}
+
+.header-icon-item:focus{outline:none !important;}
+
+
+
