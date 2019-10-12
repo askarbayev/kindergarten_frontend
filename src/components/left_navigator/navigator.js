@@ -7,7 +7,7 @@ export default class Navigator extends Component{
     render(){
         let { sideClose } = this.props;
         return(
-            <div className = {!sideClose? "lef-nav-open": "lef-nav-close"}>
+            <div className = "lef-nav">
                 <div className = "nav-item">
                     <Icon className = "icon-item" type="user"/>
                 </div>

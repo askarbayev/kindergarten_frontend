@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Header from './header/header'
 import DocViewer from './docviewer/viewer'
 import Navigator from './left_navigator/navigator'
+import DocContent from './doccontent/doccontent'
 import './style.css'
 
 class Main extends Component{
@@ -15,57 +16,24 @@ class Main extends Component{
 
     render(){
         let { sideClose } = this.state;
-        let toggle = sideClose?'toggle-layout':''
-        let toggle2 = sideClose?'grid--full':''
-        console.log(toggle)
+        let toggle_layout = sideClose?'toggle-layout':''
+        let toggle_leftSide = sideClose?'toggle-leftSide':''
+        let toggle_main = sideClose?'toggle-main':''
+        let toggle_mc_left = sideClose?'toggle-mc-left':''
+        let toggle_mc_right = sideClose?'toggle-mc-right':''
         return (
-            <div className = {`outest-layout-open ${toggle}`}> 
-                <div className = "leftSide">
-                    <Navigator sideClose = {sideClose}/>
+            <div className = {`outest-layout ${toggle_layout}`}> 
+                <div className = {`leftSide ${toggle_leftSide}`}>
+                    {/*<Navigator sideClose = {sideClose}/>*/}
+                    {<Navigator/>}
                 </div>
-                <div className = "main-layout">
+                <div className = {`main-layout ${toggle_main}`}>
                     <Header sideChange = {this.sideChange} sideClose = {sideClose}/>
-                    <div className = {!sideClose?"main-content-open":"main-content-close"}>
-                        <div className = "left-content">left side</div>
-                        <div className = "right-content">
-                        <div className = {`grid ${toggle2}`}>
-  <article class="item">
-    <h2>Element 1</h2>
-  </article>
-  <article class="item">
-    <h2>Element 2</h2>
-  </article>
-  <article class="item">
-    <h2>Element 3</h2>
-  </article>
-  <article class="item">
-    <h2>Element 4</h2>
-  </article>
-  <article class="item">
-    <h2>Element 5</h2>
-  </article>
-  <article class="item">
-    <h2>Element 6</h2>
-  </article>  
-  <article class="item">
-    <h2>Element 7</h2>
-  </article>
-  <article class="item">
-    <h2>Element 8</h2>
-  </article>
-  <article class="item">
-    <h2>Element 9</h2>
-  </article>  
-  <article class="item">
-    <h2>Element 10</h2>
-  </article>
-  <article class="item">
-    <h2>Element 11</h2>
-  </article>
-  <article class="item">
-    <h2>Element 12</h2>
-  </article>
-</div>
+                    <div className = {`main-content`}>
+                        <div className = {`left-content ${toggle_mc_left}`}>
+                            <DocContent/>
+                        </div>
+                        <div className = {`right-content ${toggle_mc_right}`}>
                             <DocViewer/>
                         </div>
                     </div>

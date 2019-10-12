@@ -1,81 +1,69 @@
 body {
     margin: 0;
     padding: 0;
-    height: 100%;
+    min-height: 100%;
+    
 }
 
-.outest-layout-open{
-    display: grid;
-    grid-template-columns: 100px 1fr;
-    height:auto !important;
-    min-height:100%;
-    grid-gap: 20px;
-    transition: all 2s;
+.outest-layout{
+    display: flex;
+    flex-direction: row;
 }
-.toggle-layout{
-    grid-template-columns: 10px 1fr !important;
-    grid-gap: 10px;
-}
+
 
 .leftSide{
-    height: 765px;
+    width: 100px;
     background: #ECEFF1;
+    order: 1;
+    transition: width .5s;
+    z-index: 0;
+    
+    
 }
-.main-content-open{
-    display: grid;
-    grid-template-columns: 350px auto;
+.main-layout{
+  order: 2;
+  min-width: auto;
+  flex: 1;
+  z-index: 1; 
+  min-height: auto;
 }
 
-.main-content-close{
-    display: grid;
-    grid-template-columns: 0 auto;
+.toggle-leftSide{
+  width: 0px;
+}
+
+.toggle-main{
+  min-width: auto;
+}
+
+.main-content{
+  display: flex;
 }
 
 .left-content{
+  text-align: left;
+    width: 300px;
+    padding: 1em;
     background: #D0D3D4;
-    height: 725px;
+    height: 785px;
+    transition: 0.5s;
+    z-index: 0;
 }
 
+.toggle-mc-left{
+  width: 0px;
+  padding: 0em;
+}
 .right-content{
+  text-align: left;
     background: #979A9A;
     padding: 1em;
-  
+    flex: 1;
+    min-width: auto;
+    z-index: 1;
 }
 
+.toggle-mc-right{
+  width: 0px;
+}
 
-  .myDIV{
-    display: grid;
-    grid-template-columns: 300px;
-    padding: 25px;
-    background-color: blue;
-    color: white;
-    font-size: 25px;
-    box-sizing: border-box;
-    transition: 2s;
-  }
-
-  .toggle-test {
-    grid-template-columns: 100px !important;
-    padding: 25px;
-    background-color: coral!important;
-    color: white;
-    font-size: 25px;
-    box-sizing: border-box;
-    
-  }
-
-  .grid {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    grid-gap: 20px;
-    transition: all 2s;
-    
-  }
-  article{
-    background: red;
-  }
-  
-  .grid--full {
-    grid-template-columns: 400px 1fr;
-    grid-gap: 10px;
-  }
