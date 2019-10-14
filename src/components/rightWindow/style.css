@@ -1,13 +1,16 @@
 .mainRightWindow{
     display: flex;
     flex-direction: column;
+    margin: auto;
+    height: 100%;
 }
 
 .topWindow{
     text-align: center;
     padding: 20px;
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr
+    grid-template-columns: 1fr 2fr 1fr;
+    height: 50px;
 }
 
 .closeWindow{
@@ -18,4 +21,18 @@
 .windowTitle{
     font-weight: bold;
     font-size: 25px;
+}
+
+.centerWindow{
+    flex: 1;
+    text-align: center;
+}
+
+.bottomWindow{
+    bottom: 0;
+    height: 50px;
+    margin: auto;
+}
+.bottomWindow.p{
+    margin: auto;
 }

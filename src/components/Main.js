@@ -8,26 +8,38 @@ import './style.css'
 
 class Main extends Component{
     state = {
-        sideClose:false
+        sideClose:false,
+        rightWindowClosed: true
     }
 
     sideChange = ()=>{
         this.setState({sideClose:!this.state.sideClose})
     }
 
+    rightWindowOpen = () => {
+        this.setState({rightWindowClosed:false})
+    }
+
+    rightWindowClose = () => {
+        this.setState({rightWindowClosed:true})
+    }
+
     render(){
-        let { sideClose } = this.state;
+        let { sideClose, rightWindowClosed } = this.state;
         let toggle_layout = sideClose?'toggle-layout':''
         let toggle_leftSide = sideClose?'toggle-leftSide':''
         let toggle_main = sideClose?'toggle-main':''
         let toggle_mc_left = sideClose?'toggle-mc-left':''
         let toggle_mc_right = sideClose?'toggle-mc-right':''
+
+        let toggle_right_window = !rightWindowClosed?'toggle-rightWindow':''
+        let toggle_outest_layout = !rightWindowClosed?'toggle-outest-layout':''
         return (
-            <div className = "layout">
-                <div className = {`outest-layout ${toggle_layout}`}> 
+            <div className = "wrap-layout">
+                <div className = {`outest-layout ${toggle_layout} ${toggle_outest_layout}`}> 
                     <div className = {`leftSide ${toggle_leftSide}`}>
                         {/*<Navigator sideClose = {sideClose}/>*/}
-                        {<Navigator/>}
+                        {<Navigator rightWindowOpen = {this.rightWindowOpen}/>}
                     </div>
                     <div className = {`main-layout ${toggle_main}`}>
                         <div>
@@ -44,8 +56,8 @@ class Main extends Component{
                     </div>
                     
                 </div>
-                <div className = "rightWindow">
-                    <RightWindow/>
+                <div className = {`rightWindow ${toggle_right_window}`}>
+                    <RightWindow rightWindowClose = {this.rightWindowClose}/>
                 </div>
             </div>
 

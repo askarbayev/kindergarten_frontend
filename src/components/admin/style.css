@@ -1,0 +1,25 @@
+.admin-page{
+    display: flex;
+    flex-direction: row;
+    padding-left: 100px;
+    padding-right: 100px; 
+    height: 100%;
+}
+
+.doc-list{
+    background: cornflowerblue;
+    order: 1;
+    width: 300px;
+    height: 100%;
+}
+
+.doc-layout{
+    order: 2;
+    flex: 1;
+    height: 100%;
+}
+
+.doc-title{
+    border: solid 1px black;
+    margin: 10px;
+}

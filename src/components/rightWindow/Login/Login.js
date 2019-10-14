@@ -11,6 +11,10 @@ class NormalLoginForm extends Component{
           }
         });
       };
+
+      signUpClick = (e) => {
+          this.props.windowStateChange(e, 'signUp')
+      }
     
       render() {
         const { getFieldDecorator } = this.props.form;
@@ -49,11 +53,15 @@ class NormalLoginForm extends Component{
                     <a className="login-form-forgot" href="">
                         Forgot password
                     </a>
+                    <br/>
                     <Button type="primary" htmlType="submit" className="login-form-button">
                         Log in
                     </Button>
                     <br/>
-                    Or <a href="">register now!</a>
+                    <div>
+                        Or <p className = "signUp" onClick = {this.signUpClick}>register now!</p>
+                    </div>
+                    
                     </Form.Item>
                 </Form>
             </div>
