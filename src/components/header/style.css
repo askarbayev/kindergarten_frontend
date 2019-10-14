@@ -1,7 +1,7 @@
 .header{
     font-family: sans-serif;
     height: 40px;
-    background: #050505;
+    background:  #CE5B78;
     color: aliceblue;
     padding-left: 15px;
     display: flex;
@@ -20,7 +20,7 @@
 
 .header-icon-item{
     font-size: 25px;
-    opacity: 0.6;
+    opacity: 0.8;
     margin: auto;
     align-items: center;
     transition: .2s;

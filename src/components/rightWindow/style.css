@@ -1,0 +1,21 @@
+.mainRightWindow{
+    display: flex;
+    flex-direction: column;
+}
+
+.topWindow{
+    text-align: center;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr
+}
+
+.closeWindow{
+    text-align: left;
+    margin-left: 0;
+    grid-row-start: 1;
+}
+.windowTitle{
+    font-weight: bold;
+    font-size: 25px;
+}
