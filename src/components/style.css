@@ -53,15 +53,17 @@ body {
 	display: flex;
   flex-direction: row;
   flex: 1;
+  background-color: whitesmoke;
 }
 
 .left-content{
   text-align: left;
   width: 300px;
   padding: 1em;
-  background: #D0D3D4;
+  background:white;
   transition: 0.5s;
   z-index: 0;
+  margin-right: 2px;
   
 }
 
@@ -71,10 +73,12 @@ body {
 }
 .right-content{
   text-align: left;
-  background: #979A9A;
+  background: white;
   padding: 1em;
   flex: 1;
   z-index: 1;
+  
+  
 }
 
 .toggle-mc-right{
@@ -85,7 +89,7 @@ body {
   position: absolute;
   right: 0;
   top:0;
-  width: 500px;
+  width: 420px;
   height: 100%;
   background: #fff;
   z-index: 1;

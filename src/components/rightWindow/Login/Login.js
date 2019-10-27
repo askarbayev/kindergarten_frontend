@@ -59,7 +59,7 @@ class NormalLoginForm extends Component{
                     </Button>
                     <br/>
                     <div>
-                        Or <p className = "signUp" onClick = {this.signUpClick}>register now!</p>
+                        Or <a className = "signUp" onClick = {this.signUpClick}>register now!</a>
                     </div>
                     
                     </Form.Item>

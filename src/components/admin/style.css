@@ -3,7 +3,6 @@
     flex-direction: row;
     padding-left: 100px;
     padding-right: 100px; 
-    height: 100%;
 }
 
 .doc-list{
@@ -11,15 +10,97 @@
     order: 1;
     width: 300px;
     height: 100%;
+    overflow: hidden;
 }
+
+.centerContent{
+    order: 2;
+    height: auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100vh; 
+    margin-left: 5px;
+}
+
+.doc-header{
+    height: 50px;
+    border:solid 1px darkgray;
+    margin-bottom: 5px;
+    display: flex;
+}
+
 
 .doc-layout{
     order: 2;
-    flex: 1;
-    height: 100%;
+    flex-grow: 1;
+    border:solid 1px darkgray;
+    overflow: auto;
 }
 
-.doc-title{
-    border: solid 1px black;
+.doc-wrap{
+    border: solid 1px darkgray;
     margin: 10px;
+    display: none;
+    text-align: left;
+    padding: 5px;
 }
+.toggle-doc-wrap{
+    display: flex;
+    justify-content: space-between;
+}
+
+.toggle-doc-wrap:last-child{
+    margin-left: auto;
+}
+
+.section-wrap {
+    border: solid 1px darkgray;
+    margin: 10px;
+    background-color: #D0D3D4;
+    opacity: 0.8;
+    margin-top:20px;
+}
+
+.section-wrap:hover{
+    opacity: 2
+}
+
+.sub-section-wrap{
+    border: solid 1px darkgray;
+    margin: 10px;
+    background-color: #AEB6BF;
+}
+
+.addContent{
+    right: 0;
+    float: right;
+    width: 100px;
+}
+
+.popoverAdd{
+    margin: 20px;
+    margin-bottom: 20px;
+}
+.inputElement{
+    margin: 20px;
+}
+
+.editIcon{
+    margin-right: 10px;
+   
+}
+
+.admin-header{
+    margin:auto;
+}
+.doc-title{
+    width: auto;
+}
+
+.text-actions{
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+}
+

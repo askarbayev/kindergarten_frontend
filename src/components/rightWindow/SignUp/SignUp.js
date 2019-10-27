@@ -124,7 +124,7 @@ class SignUpForm extends Component{
                             Sign Up
                         </Button>
                         <div>
-                            Or <p className = "login" onClick = {this.loginClick}>login</p>
+                            Or <a className = "login" onClick = {this.loginClick}>login</a>
                         </div>
                     </Form.Item>
                     
