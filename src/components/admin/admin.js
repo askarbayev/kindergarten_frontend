@@ -20,7 +20,7 @@ class Admin extends Component{
 
     docSave = () => {
         console.log('Save', this.state)
-        const {title, summary, text, sections} = this.state
+        const {title, summary, sections} = this.state
         let querySections = []
         for (let section of sections){
             let querySubSections = []
