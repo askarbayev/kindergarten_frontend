@@ -1,34 +1,25 @@
-import {
-    DOC_CREATE_PENDING,
-    DOC_CREATE_SUCCESS,
-    DOC_CREATE_FAILURE
+const createDocPending = pendingType => {
+  return {
+    type: pendingType
+  };
+};
 
-} from '../constants/actionTypes'
+const createDocSuccess = (data, successType) => {
+  return {
+    type: successType,
+    payload: data.data
+  };
+};
 
+const createDocFailure = (error, failureType) => {
+  return {
+    type: failureType,
+    error
+  };
+};
 
-const createDocPending = ()=>{
-    return {
-        type: DOC_CREATE_PENDING
-    }
-}
-
-const createDocSuccess = (data)=>{
-    return {
-        type: DOC_CREATE_SUCCESS,
-        payload: data
-    }
-}
-
-const createDocFailure = (error)=>{
-    return {
-        type: DOC_CREATE_FAILURE,
-        error
-    }
-}
-
-export const createDoc = (graphqlQuery) => {
-
-   /*  const graphqlQuery = `mutation{
+export const graphqlQuery = (query, pendingType, successType, failureType) => {
+  /*  const query = `mutation{
         createDoc(input: {
             title:"How to Create GraphQL with Node JS",
             summary:"it is to create a service",
@@ -65,21 +56,20 @@ export const createDoc = (graphqlQuery) => {
         })
     }` */
 
-    const request_body = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json'},
-        body: JSON.stringify({query:graphqlQuery})
-    }
+  const request_body = {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ query: query })
+  };
 
-    return async (dispatch)=>{
-        dispatch(createDocPending())
-        try{
-            let response = await fetch('http://localhost:5000/doc', request_body)
-            let data = await response.json()
-            dispatch(createDocSuccess(await data))
-        }
-        catch(error){
-            dispatch(createDocFailure(error))
-        }
-    } 
-}
+  return async dispatch => {
+    dispatch(createDocPending(pendingType));
+    try {
+      let response = await fetch("http://localhost:8080/doc", request_body);
+      let data = await response.json();
+      dispatch(createDocSuccess(await data, successType));
+    } catch (error) {
+      dispatch(createDocFailure(error, failureType));
+    }
+  };
+};
